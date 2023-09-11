@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frutiger Aero Web</title>
+  <link rel="stylesheet" href="aero.css?v=105">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/logon.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap;
+    flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ref imgs
+  https://i.ytimg.com/vi/lfgi26il37I/maxresdefault.jpg
+  https://www.webdevelopersnotes.com/blog/blog-images/windows-7-taskbar-with-icons.png -->
+
+  <!-- TaskBar -->
+
+  <div class="taskbar">
+    <button class="startbutton"></button>
+    <!-- this is the default state.
+    the button above is used for hover and active.
+    if you want the active state to stick, switch the
+    class on the button to .startbuttonactive and
+    it will stick. -->
+    <div class="startorb"></div>
+      <div class="taskbaricons" id="taskbaricons">
+        <button class="taskbarbutton taskbarfocused"><img class="taskbaricon" draggable="false" src="./icons/information.png"></button>
+      </div>
+      <div class="datetime"></div>
+      <div class="aeropeek"></div>
+  </div>
+
+<!-- Window -->
+  
+    <div class="window" style="width: 400px" id="window">
+        <div class="title-bar" id="windowheader">
+            <img aria-label="windowicon" src="./icons/information.png">
+          <div class="title-bar-text">A Window With Stuff In It</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body" style="height:245px;">
+          <p>DevBuild Text</p>
+          <br> <p>this is just filler content.</p>
+
+          <input type="checkbox" id="checkbox1">
+          <label for="checkbox1">CheckBox</label>
+
+          <fieldset>
+            <div class="field-row">radio buttons:</div>
+            <div class="field-row">
+              <input id="radio5" type="radio" name="fieldset-example">
+              <label for="radio5">Me?</label>
+            </div>
+            <div class="field-row">
+              <input id="radio6" type="radio" name="fieldset-example">
+              <label for="radio6">No, Me!</label>
+            </div>
+          </fieldset>
+
+          <section class="field-row" style="justify-content: flex-end">
+            <button>OK</button>
+            <button>Cancel</button>
+          </section>
+        </div>
+      </div>
+
+
+      <!-- window drag -->
+      <script src="./WindowDrag.js"></script>
+
+<!-- Taskbar Gradient Hover -->
+<script src="./TaskbarGradient.js"></script>
+</body>
+</html>
